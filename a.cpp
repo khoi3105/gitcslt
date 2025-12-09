@@ -2,6 +2,15 @@
 #include <iostream>
 using namespace std;
 
+double getMedian(int* array, int num) {
+	if (num % 2 != 0) {
+		return *(array + (num / 2));
+	}
+	else {
+		return ((double)(*(array + num/2) + *(array + num/2 - 1)) / 2.0);
+	}
+}
+
 int main() {
     // // write file
     // ofstream out;
