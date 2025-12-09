@@ -63,6 +63,13 @@ Node* findByValue(List list, int fValue) {
     return nullptr;
 }
 
+void deleteHead(List& list) {
+    Node* temp = list.pHead;
+    Node* newHead = temp->pNext;
+    delete temp;
+    list.pHead = newHead;
+}
+
 int main() {
     List list;
     list.pHead = NULL;
@@ -76,8 +83,10 @@ int main() {
     addTail(list,node3);
     addTail(list,node4);
 
+    // Node* findResult = findByValue(list,3);
+    // cout << findResult->value << endl;
+    deleteHead(list);
     displayList(list);
-    Node* findResult = findByValue(list,3);
-    cout << findResult->value << endl;
+    cout << (node1->value);
     return 0;
 }
