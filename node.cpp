@@ -52,8 +52,15 @@ void displayList(List list) {
     cout << endl;
 }
 
-Node* findByValue(List list, int value) {
-    
+Node* findByValue(List list, int fValue) {
+    Node* temp = list.pHead;
+    while (temp != NULL) {
+        if (temp->value == fValue) {
+            return temp;
+        }
+        temp = temp->pNext;
+    }
+    return nullptr;
 }
 
 int main() {
@@ -70,5 +77,7 @@ int main() {
     addTail(list,node4);
 
     displayList(list);
+    Node* findResult = findByValue(list,3);
+    cout << findResult->value << endl;
     return 0;
 }
